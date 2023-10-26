@@ -5,7 +5,7 @@ ENV NODE_ENV production
 USER node
 WORKDIR /app
 COPY --chown=node:node package*.json ./
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 COPY --chown=node:node . .
 
 EXPOSE 3000
